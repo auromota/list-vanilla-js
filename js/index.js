@@ -5,7 +5,9 @@ function submit() {
     var input = document.getElementById('name');
     users.push(input.value);
     input.value = '';
-    users = users.sort();
+    users = users.sort(function(a, b) {
+        return a.toLowerCase().localeCompare(b.toLowerCase());
+    });
     clear();
     var ul = document.createElement('ul');
     list.appendChild(ul);
