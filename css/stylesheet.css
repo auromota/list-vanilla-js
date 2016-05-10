@@ -1,0 +1,10 @@
+body {
+    background-color: grey;
+    margin-left: 50px;
+    width: 400px;
+}
+
+#list>ul {
+    list-style-type: decimal;
+    list-style-position: inside;
+}
