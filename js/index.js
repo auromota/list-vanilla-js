@@ -42,7 +42,7 @@ function loadPage() {
 }
 
 function deleteUser(event) {
-    var item = event.srcElement;
+    var item = event.target;
     if(confirm('Do you want to delete ' + item.textContent + '?')) {
         var id = item.id.slice(4);
         users.splice(id, 1);
