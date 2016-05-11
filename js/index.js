@@ -4,7 +4,6 @@ function submit() {
     var input = document.getElementById('name');
     if(isValid(input)) {
         addUser(input);
-        sortUsersByName();
         loadPage();
     } else {
         alert('You must inform an username');
@@ -12,8 +11,9 @@ function submit() {
 }
 
 function addUser(input) {
-    users.push(input.value);
+    users.push(input.value.trim());
     input.value = '';
+    sortUsersByName();
 }
 
 function isValid(input) {
@@ -52,9 +52,7 @@ function deleteUser(event) {
 
 function clearPage() {
     var list = document.getElementById('list');
-    while(list.firstChild) {
-        list.removeChild(list.firstChild);
-    }
+    list.innerHTML = '';
 }
 
 function reset() {
